@@ -68,12 +68,15 @@ mongoose
   .connect(process.env.DB_URL)
   .then(() => {
     console.log("Database connected");
-    server.listen(process.env.PORT || 5000, () => {
+    if(process.env.NODE_ENV !== "production"){
+ server.listen(process.env.PORT || 5000, () => {
       console.log("Server running");
     });
+    }
+   
   })
   .catch((error) => {
     console.error("Database connection error:", error);
   });
 
-export default app ;
+export default server ;
