@@ -116,7 +116,7 @@ export const AuthProvider = ({ children }) => {
   };
   useEffect(() => {
   
-    checkAuth()
+    checkAuth
   }, []);
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
